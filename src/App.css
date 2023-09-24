@@ -1,8 +1,12 @@
-.App {
-  text-align: center;
-  
+.Top {
+	display: flex;
+	justify-content: center;
+  width: 100%;
 }
-
+.Header {
+	text-align: center;
+	display: inline;
+}
 .Image {
 	padding-right: 30px;
   width: 100px;
@@ -40,8 +44,6 @@ select {
 p {
 	display: inline-block;
 	font-size: 16px;
-
-	padding: 0px 10px;
 }
 .box {
 	height: -100px;

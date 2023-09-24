@@ -3,9 +3,13 @@ import "./App.css";
 function App() {
 	return (
 		<div className='App'>
+			<div className="Top">
 			<img className='Image' src='future collars.png' alt='Logo'></img>
 			<h1>Przelicznik walut</h1>
-			<header className='App-header'>
+			
+			</div>
+			<div className="Space"></div>
+			<header className='Header'>
 				<form id='income-form' class='size'>
 					<input type='number' id='amount' placeholder='  Kwota'></input>
 					<select id='from-currency'>
