@@ -1,30 +1,28 @@
 import "./App.css";
+import Button from "./Form/Button";
+import Input from "./Form/Input";
+import Result from "./Form/Result";
 
 function App() {
 	return (
-		<div className='App'>
-			<div className='Top'>
-				<img className='Image' src='future collars.png' alt='Logo'></img>
-				<h1>Przelicznik walut</h1>
+		<>
+			<div className='App'>
+				<div className='Top'>
+					<img className='Image' src='future collars.png' alt='Logo'></img>
+					<h1>Przelicznik walut</h1>
+				</div>
+				<header className='Header'>
+					<form id='income-form' class='size'>
+						<Input></Input>
+						<Select></Select>
+						<Button></Button>
+						<Result></Result>
+						<p>PLN</p>
+					</form>
+				</header>
 			</div>
-			<div className='Space'></div>
-			<header className='Header'>
-				<form id='income-form' class='size'>
-					<input type='number' id='amount' placeholder='  Kwota'></input>
-					<select id='from-currency'>
-						<option value='EUR'>Euro</option>
-						<option value='USD'>Dolar amerykański</option>
-						<option value='CHF'>Frank szwajcarski</option>
-					</select>
-
-					<button id='get-currencies'>Przelicz</button>
-					<p>To</p>
-					<p id='result' class='box'></p>
-					<p>PLN</p>
-				</form>
-			</header>
 			<hr width='400'></hr>
-		</div>
+		</>
 	);
 }
 
