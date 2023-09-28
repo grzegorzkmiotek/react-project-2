@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 
 function Result() {
-	return <p id='result' class='box'></p>;
+	return <p id='result' className='box'></p>;
 }
 
 export default Result;

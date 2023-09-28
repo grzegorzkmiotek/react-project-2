@@ -2,6 +2,7 @@ import "./App.css";
 import Button from "./Form/Button";
 import Input from "./Form/Input";
 import Result from "./Form/Result";
+import Select from "./Form/Select";
 
 function App() {
 	return (
@@ -12,7 +13,7 @@ function App() {
 					<h1>Przelicznik walut</h1>
 				</div>
 				<header className='Header'>
-					<form id='income-form' class='size'>
+					<form id='income-form' className='size'>
 						<Input></Input>
 						<Select></Select>
 						<Button></Button>
@@ -27,3 +28,4 @@ function App() {
 }
 
 export default App;
+
