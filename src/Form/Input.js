@@ -1,7 +1,7 @@
 import "../App.css";
 
-function Input() {
-	return <input type='number' id='amount' placeholder='  Kwota'></input>;
+function Input({ handleInput }) {
+	return <input onChange={(event) => handleInput(event.target.value)} type='number' id='amount' placeholder='  Kwota'></input>;
 }
 
 export default Input;

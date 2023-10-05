@@ -1,7 +1,7 @@
 .Top {
 	display: flex;
 	justify-content: center;
-  width: 100%;
+	width: 100%;
 }
 .Header {
 	text-align: center;
@@ -9,19 +9,14 @@
 }
 .Image {
 	padding-right: 30px;
-  width: 100px;
+	width: 100px;
 	height: 100px;
 }
 
-
-h1 {
+.H1 {
 	padding: 15px;
 	border: 1px solid black;
-	font-weight: normal;
-}
-b {
-	font-size: 20px;
-	margin-left: 10px;
+	font-weight: bold;
 }
 input {
 	width: 110px;
@@ -45,11 +40,7 @@ p {
 	display: inline-block;
 	font-size: 16px;
 }
-.box {
-	height: -100px;
-	width: 67px;
-	padding: 0px 5px;
-	font-style: italic;
-	font-weight: bold;
-	font-size: 20px;
+.Space {
+	margin-left: 10px;
+	margin-right: 10px;
 }

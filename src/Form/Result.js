@@ -1,8 +1,12 @@
-import React from "react";
+
 import "../App.css";
 
-function Result() {
-	return <p id='result' className='box'></p>;
+function Result({ result }) {
+	return (
+		<p id='result' className='box'><p>Wynosi: </p><p className='Space'>{result}</p><p>PLN</p>
+			
+		</p>
+	);
 }
 
 export default Result;

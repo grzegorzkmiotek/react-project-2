@@ -1,9 +1,5 @@
-import React from 'react'
-
-function ServicesApi() {
-  return (
-    async function fetchExchangeRate() {
-      const url = `http://api.nbp.pl/api/exchangerates/rates/a/${selectedValue}`;
+async function fetchExchangeRate(currencyCode) {
+      const url = `http://api.nbp.pl/api/exchangerates/rates/a/${currencyCode}`;
       const response = await fetch(url);
   
       if (!response.ok) {
@@ -13,7 +9,7 @@ function ServicesApi() {
       const data = await response.json();
       return data.rates[0].mid;
     }
-  )
-}
+  
 
-export default ServicesApi;
+
+export default fetchExchangeRate;
