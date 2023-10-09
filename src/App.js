@@ -4,12 +4,13 @@ import Button from "./Form/Button";
 import Input from "./Form/Input";
 import Result from "./Form/Result";
 import Select from "./Form/Select";
-import fetchExchangeRate from "./Services/ServicesApi";
+import fetchExchangeRate from "./Services/fetchExchangeRate";
 
 function App() {
 	const [selectedValue, setSelectedValue] = useState("EUR");
 	const [inputValue, setInputValue] = useState(0);
 	const [convertingResult, setConvertingResult] = useState("");
+	const [error, setError] = useState("");
 
 	const handleSelect = (value) => {
 		setSelectedValue(value);
@@ -21,35 +22,40 @@ function App() {
 
 	function convertCurrency(event) {
 		event.preventDefault();
+		setError("");
 
 		fetchExchangeRate(selectedValue)
 			.then((rate) => {
-				console.log(rate, inputValue);
-				const result = rate * inputValue;
-				setConvertingResult(result.toFixed(2));
+				if (rate) {
+					const result = (rate * inputValue).toFixed(2);
+					setConvertingResult(result)
+				} else {
+					setError("Wystąpił błąd!");
+				}
 			})
-			.catch((error) => {
-				console.error(`Wystąpił błąd! ${error}`);
+			.catch(() => {
+				setError("Wystąpił błąd!");
 			});
 	}
 
 	return (
 		<>
 			<div className='App'>
-				<div className='Top'>
-					<img className='Image' src='future collars.png' alt='Logo'></img>
-					<h1 className='H1'>Przelicznik walut</h1>
+				<div className='top'>
+					<img className='image' src='future collars.png' alt='Logo'></img>
+					<h1 className='h1'>Przelicznik walut</h1>
 				</div>
-				<header className='Header'>
-					<form id='income-form' className='size' onSubmit={convertCurrency}>
-						<Input handleInput={handleInput} />
+				<header className='header'>
+					<form className='size' onSubmit={convertCurrency}>
+						<Input className='input' handleInput={handleInput} />
 						<Select handleSelect={handleSelect} />
 						<Button />
 						<Result result={convertingResult} />
 					</form>
 				</header>
 			</div>
-			<hr width='400'></hr>
+			{error ? <p>{error}</p> : null}
+			<hr className='divider'></hr>
 		</>
 	);
 }
