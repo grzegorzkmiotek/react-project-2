@@ -1,12 +1,8 @@
-import React from "react";
-import "../App.css";
-
-function Select({ handleSelect }) {
+function Select() {
 	return (
 		<select
-			id='from-currency'
-			className='container'
-			onChange={(event) => handleSelect(event.target.value)}>
+		name="currency"
+			className='container'>
 			<option value='EUR'>Euro</option>
 			<option value='USD'>Dolar amerykański</option>
 			<option value='CHF'>Frank szwajcarski</option>

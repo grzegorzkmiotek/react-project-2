@@ -7,21 +7,13 @@ import Select from "./Form/Select";
 import fetchExchangeRate from "./Services/fetchExchangeRate";
 
 function App() {
-	const [selectedValue, setSelectedValue] = useState("EUR");
-	const [inputValue, setInputValue] = useState(0);
 	const [convertingResult, setConvertingResult] = useState("");
 	const [error, setError] = useState("");
 
-	const handleSelect = (value) => {
-		setSelectedValue(value);
-	};
-
-	const handleInput = (value) => {
-		setInputValue(Number(value));
-	};
-
 	function convertCurrency(event) {
 		event.preventDefault();
+		const selectedValue = event.target.currency.value;
+		const inputValue = event.target.amount.value;
 		setError("");
 
 		fetchExchangeRate(selectedValue)
@@ -47,8 +39,8 @@ function App() {
 				</div>
 				<header className='header'>
 					<form className='size' onSubmit={convertCurrency}>
-						<Input className='input' handleInput={handleInput} />
-						<Select handleSelect={handleSelect} />
+						<Input className='input'/>
+						<Select/>
 						<Button />
 						<Result result={convertingResult} />
 					</form>

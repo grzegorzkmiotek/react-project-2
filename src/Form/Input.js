@@ -1,11 +1,8 @@
-import "../App.css";
-
-function Input({ handleInput }) {
+function Input() {
 	return (
 		<input
-			onChange={(event) => handleInput(event.target.value)}
+			name='amount'
 			type='number'
-			id='amount'
 			placeholder='Kwota'
 			required
 			min='0.01'
